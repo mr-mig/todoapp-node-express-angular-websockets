@@ -1,5 +1,6 @@
 # Preface
 This TODO app is a hackathon result.
+
 Development time: 24h in total
 
 **This is not a full-fledged project and won't be supported.**
