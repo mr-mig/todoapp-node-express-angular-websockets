@@ -1,0 +1,13 @@
+.panel.panel-default
+  .panel-body
+    form(name="current.addform", ng-submit='submitTodo(current.input)', novalidate)
+      .input-group
+        input.form-control(name="title", ng-model='current.input', type='text', tabindex='1', placeholder='What do you need to do?', required)
+        span.input-group-btn
+          button.btn.btn-success(type='submit', tabindex='2', ng-class="current.addform.title.$valid ? '' : 'disabled' ", ng-blur="focusInput()") Add!
+    .row
+      .col-xs-6
+        h6= 'Format: <title>  <duedate><time modifier> <priority>'
+        h6 Example: Test project&nbsp;&nbsp;2w 3
+      .col-xs-6
+        h6.pull-right API Token: {{ current.user.token }}

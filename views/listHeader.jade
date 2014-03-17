@@ -1,0 +1,12 @@
+li(ng-class="{'active': current.sort.mode == 'id'}")
+  a(href="/") List
+li(ng-class="{'active': current.sort.mode == 'priority'}")
+  a(ng-href="/sort/priority/{{current.sort.dir == 'asc' ? 'desc' : 'asc'}}") Priority
+    i.fa.fa-caret-down(ng-show="current.sort.dir == 'desc'")
+    i.fa.fa-caret-up(ng-show="current.sort.dir == 'asc'")
+li(ng-class="{'active': current.sort.mode == 'date'}")
+  a(ng-href="/sort/date/{{current.sort.dir == 'asc' ? 'desc' : 'asc'}}") Date
+    i.fa.fa-caret-down(ng-show="current.sort.dir == 'desc'")
+    i.fa.fa-caret-up(ng-show="current.sort.dir == 'asc'")
+li
+  a(ng-href="/logout") Logout

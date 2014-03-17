@@ -1,0 +1,17 @@
+
+form.loginform(name='authform', ng-submit='action()', novalidate)
+  .row
+    .col-xs-12
+      .input-group
+        .input-group-addon Login
+        input.form-control(tabindex="1", type="text", name="username", ng-model="current.user.username", required)
+       .input-group
+        .input-group-addon Password
+        input.form-control(tabindex="2",type="password", name="password", ng-model="current.user.password", required)
+  .row
+    .col-xs-12
+      span.btn-group
+        button.btn.btn-default(tabindex='4', ng-click="action = register ", ng-class="authform.password.$valid && authform.username.$valid ? '' : 'disabled' ") Sign up
+        button.btn.btn-success(tabindex='3', ng-click="action = login ", ng-class="authform.password.$valid && authform.username.$valid ? '' : 'disabled' ") Log in
+    .col-xs-12
+      alert(ng-if="error" type="'danger'", close="error = null") {{ error }}

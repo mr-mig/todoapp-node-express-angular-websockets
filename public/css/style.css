@@ -1,0 +1,47 @@
+#list h6 {
+    color: #a5a5a5;
+}
+
+#list h3 {
+    height: 30px;
+    line-height: 30px;
+}
+
+#list .priority, #list .duedate {
+    margin-left: 10px;
+}
+
+.non-selectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.done, .done span {
+    text-decoration: line-through;
+}
+
+.navbar li .fa {
+    margin-left: 4px;
+}
+
+.loginform{
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.loginform .input-group{
+    width: 100%;
+}
+.loginform .input-group-addon{
+    width: 90px;
+}
+
+
+.loginform .btn-group, .loginform .alert{
+    margin-top: 16px
+}

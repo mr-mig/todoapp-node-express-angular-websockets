@@ -1,0 +1,23 @@
+controls
+.row(ng-repeat="todo in current.todoList | orderBy:current.sort.mode:current.sort.dir != 'asc' track by todo.id ")
+  .col-xs-12
+    .panel(ng-dblclick="editMode(todo)" ng-class="{'panel-danger' : dueDays(todo.date) <= 0, 'panel-warning': dueDays(todo.date) <= 1, 'panel-info': dueDays(todo.date) > 1 }")
+      .panel-heading
+        .row
+          .col-xs-9(ng-if="!todo.editMode")
+            h3.panel-title.non-selectable(ng-class="todo.done ? 'done' : ''") {{todo.title}}
+              span.badge.priority(ng-show="todo.priority > 0", tooltip-placement="bottom", tooltip="Priority") {{ todo.priority }}
+              span.label.label-primary.duedate(tooltip-placement="bottom", tooltip="Due Date") {{ todo.date | date:'EEEE, MMM d, y' }}
+          .col-xs-12(ng-if="todo.editMode")
+            edit(todo="todo")
+          .col-xs-3(ng-if="!todo.editMode")
+            span.btn-toolbar
+              .btn-group.btn-group-md.pull-right
+                button.btn.btn-danger(ng-click="deleteTodo(todo.id)")
+                  i.fa.fa-trash-o
+                button.btn.btn-default(ng-if="!todo.done", ng-click="editMode(todo)")
+                  i.fa.fa-edit
+                button.btn.btn-success(ng-if="!todo.done", ng-click="markDone(todo, true)")
+                  i.fa.fa-check
+                button.btn.btn-success(ng-if="todo.done", ng-click="markDone(todo, false)")
+                  i.fa.fa-undo

@@ -1,0 +1,5 @@
+form(name="editform{{ todo.id }}", ng-submit='updateTodo(todo, input)', novalidate)
+  .input-group
+    input.form-control(name="title", ng-model="input", type='text', required)
+    span.input-group-btn
+      button.btn.btn-success(type='submit', tabindex='2', ng-class="editform{{todo.id}}.title.$valid ? '' : 'disabled' ") Save!

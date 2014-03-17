@@ -1,0 +1,14 @@
+*.class
+*.log
+.DS_Store
+
+#IDEA specific
+workspace.xml
+tasks.xml
+*.iws
+*.iml
+.idea
+
+#node modules
+node_modules
+bower_components
